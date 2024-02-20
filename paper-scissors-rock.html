@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Paper, Scissors, Rock</title>
+</head>
+<body>
+  <script>
+    // Your JavaScript goes here!
+    let playerWon = 0;
+    let compWon = 0;
+    
+    function getComputerChoice(){
+      let rand = Math.random()*100;
+      if (rand >= 66){
+        return "paper"
+      }
+      else if (rand >= 33){
+        return "scissors"
+      }
+      else{
+        return "rock"
+    }
+    };
+
+
+    function roshambo(player_selection, computer_choice){
+
+      if (player_selection == "paper" && computer_choice == "paper"){
+        console.log("Paper vs paper is a DRAW!")
+        playerWon ++;
+        compWon ++;
+      }
+      else if (player_selection == "paper" && computer_choice == "scissors"){
+        console.log("You lose, scissors crushes paper")
+        compWon ++;
+
+      }
+      else if (player_selection == "paper" && computer_choice == "rock"){
+        console.log("You win, paper crushes rock")
+        playerWon ++;
+      }
+      else if (player_selection == "scissors" && computer_choice == "paper"){
+        console.log("You win, scissors crushes paper")
+        playerWon ++;
+      }
+      else if (player_selection == "scissors" && computer_choice == "rock"){
+        console.log("You lose, rock crushes scissors")
+        compWon ++;
+      }
+      else if (player_selection == "scissors" && computer_choice == "scissors"){
+        console.log("Scissors vs scissors is a DRAW!")
+        compWon ++;
+        playerWon ++;
+      }
+      else if (player_selection == "rock" && computer_choice == "paper"){
+        console.log("You lose, paper crushes rock")
+        compWon ++;
+      }
+      else if (player_selection == "rock" && computer_choice == "scissors"){
+        console.log("You win, rock crushes scissors")
+        playerWon ++;
+      }
+      else {
+        console.log("Rock vs rock is a DRAW!")
+        playerWon ++;
+        compWon ++;
+      }
+      console.log(playerWon)
+      console.log(compWon)
+      }
+    
+    function playRound(){
+      let player_selection = (prompt("What is your selection?", "Paper, Scissors or Rock").toLowerCase());
+      const computer_choice = getComputerChoice();
+      roshambo(player_selection, computer_choice)
+    }
+
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+
+    //let player_selection = (prompt("What is your selection?", "Paper, Scissors or Rock").toLowerCase());
+    //console.log(player_selection)
+    //const computer_choice = getComputerChoice();
+    //console.log(computer_choice)
+    //console.log(roshambo(player_selection, computer_choice))
+
+
+
+
+
+
+
+    
+
+  </script>
+</body>
+</html>
